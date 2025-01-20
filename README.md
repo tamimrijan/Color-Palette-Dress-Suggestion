@@ -13,11 +13,5 @@ The "Color Palette & Dress Suggestion" web app helps users choose outfits by ana
 ## Technologies Used
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Python (for image processing)
-- **Libraries**: [Insert any libraries like OpenCV, TensorFlow, etc.]
+- **Libraries**: [OpenCV, TensorFlow, etc.]
 - **Image Processing**: Color extraction algorithms
-
-## Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/color-palette-dress-suggestion.git
