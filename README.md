@@ -15,3 +15,8 @@ The "Color Palette & Dress Suggestion" web app helps users choose outfits by ana
 - **Backend**: Python (for image processing)
 - **Libraries**: [OpenCV, TensorFlow, etc.]
 - **Image Processing**: Color extraction algorithms
+
+## Screenshots
+![App Screenshot](https://ibb.co.com/D8MXWSf)
+![App Screenshot](https://i.postimg.cc/0jjBQncb/Screenshot-1159.png) 
+![App Screenshot](https://i.postimg.cc/HnNP7Mh3/Screenshot-1160.png)
