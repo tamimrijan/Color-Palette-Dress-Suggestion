@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette & Dress Suggestion</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #444;
+        }
+        input[type="file"] {
+            padding: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #fff;
+            transition: 0.3s;
+        }
+        input[type="file"]:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        #color-palette {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .color-box {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        #suggestions {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload a Photo to Get Color Suggestions</h1>
+    <input type="file" id="imageInput" accept="image/*">
+    <div id="color-palette"></div>
+    <p id="suggestions"></p>
+
+    <script>
+        document.getElementById('imageInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    sendImageToServer(e.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function sendImageToServer(imageData) {
+            fetch('http://localhost:5000/process', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ image: imageData })
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayColors(data.colors);
+                document.getElementById('suggestions').textContent = 'Suggested Dress Colors: ' + data.suggestions.join(', ');
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function displayColors(colors) {
+            const paletteDiv = document.getElementById('color-palette');
+            paletteDiv.innerHTML = '';
+            colors.forEach(color => {
+                const box = document.createElement('div');
+                box.className = 'color-box';
+                box.style.backgroundColor = color;
+                paletteDiv.appendChild(box);
+            });
+        }
+    </script>
+</body>
+</html>
