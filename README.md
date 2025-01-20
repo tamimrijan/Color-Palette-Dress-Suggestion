@@ -17,10 +17,6 @@ The "Color Palette & Dress Suggestion" web app helps users choose outfits by ana
 - **Image Processing**: Color extraction algorithms
 
 ## Screenshots
-![App Screenshot](https://ibb.co.com/D8MXWSf)
-![App Screenshot](https://i.postimg.cc/0jjBQncb/Screenshot-1159.png) 
-![App Screenshot](https://i.postimg.cc/HnNP7Mh3/Screenshot-1160.png)
-
-(https://i.postimg.cc/8Cv9bVXc/Screenshot-1293.png)
-(https://i.postimg.cc/ZnbQZvbv/Screenshot-1294.png)
-(https://i.postimg.cc/XqszvNqH/Screenshot-1295.png)
+![App Screenshot](https://i.postimg.cc/8Cv9bVXc/Screenshot-1293.png)
+![App Screenshot](https://i.postimg.cc/ZnbQZvbv/Screenshot-1294.png)
+![App Screenshot](https://i.postimg.cc/XqszvNqH/Screenshot-1295.png)
